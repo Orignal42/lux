@@ -1,0 +1,122 @@
+{{ form_start(form) }}
+
+
+
+
+                            
+
+   
+          <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="input-field">
+         {{ form_widget(form.gender)}}
+         {{ form_label(form.gender, 'votre genre', {
+            'label_attr': {'class': 'genre'}
+        }) }}</div></div>
+                 <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="input-field">
+         {{ form_widget(form.lastName)}}
+         {{ form_label(form.lastName, 'votre nom', {
+            'label_attr': {'class': 'lastname'}
+        }) }}
+    </div></div>
+               
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="input-field">
+         {{ form_widget(form.firstName)}}
+         {{ form_label(form.firstName, 'votre prénom', {
+            'label_attr': {'class': 'firstname'}
+        }) }}</div></div>
+                
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="input-field">
+         {{ form_widget(form.adress)}}
+         {{ form_label(form.adress, 'votre adresse', {
+            'label_attr': {'class': 'adress'}
+        }) }}</div></div>
+        
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="input-field">
+         {{ form_widget(form.country)}}
+         {{ form_label(form.country, 'votre pays', {
+            'label_attr': {'class': 'country'}
+        }) }}</div></div>
+
+                               
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="input-field">
+         {{ form_widget(form.nationality)}}
+         {{ form_label(form.nationality, 'votre nationalité', {
+            'label_attr': {'class': 'nationality'}
+        }) }}</div></div>
+                                       
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="input-field">
+         {{ form_widget(form.passport)}}
+         {{ form_label(form.passport, 'un scan de votre passeport', {
+            'label_attr': {'class': 'passport'}
+        }) }}</div></div>
+                                  
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="input-field">
+         {{ form_widget(form.cv)}}
+         {{ form_label(form.cv, 'Cv', {
+            'label_attr': {'class': 'cv'}
+        }) }}</div></div>
+                                               
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="input-field">
+         {{ form_widget(form.profil_picture)}}
+         {{ form_label(form.profil_picture, 'Une photo', {
+            'label_attr': {'class': 'profilPicture'}
+        }) }}</div></div>
+    
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="input-field">
+            {{ form_widget(form.currentLocation)}}
+         {{ form_label(form.currentLocation, 'le secteur de votre recherche', {
+            'label_attr': {'class': 'currentLocation'}
+        }) }}</div></div>
+
+                             
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="input-field">
+         {{ form_widget(form.dateOfBirth)}}
+         {{ form_label(form.dateOfBirth, 'votre date de naissance', {
+            'label_attr': {'class': 'dateOfBirth'}
+        }) }}</div></div>
+                                       <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="input-field">
+         {{ form_widget(form.placeOfBirth)}}
+         {{ form_label(form.placeOfBirth, 'votre lieu de naissance', {
+            'label_attr': {'class': 'placeOfBirth'}
+        }) }}</div></div>
+                                 <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="input-field">
+         {{ form_widget(form.description)}}
+         {{ form_label(form.description, 'un résumé rapide de votre vie', {
+            'label_attr': {'class': 'description'}
+        }) }}</div></div>
+
+                     
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+  <section class="section-padding">
+                <div class="container">
+                    <div class="row">
+                        <h3 class="text-extrabold">Your personal informations</h3>
+               </div>
+            </section>
+  
+
+    </div>
+   
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

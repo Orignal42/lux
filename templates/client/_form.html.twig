@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+
+
+ <div class="input-field col s12 l6">
+    {{form_widget(form.societyName)}}
+      {{form_label(form.societyName)}}
+      </div>
+ <div class="input-field col s12 l6">
+    {{form_widget(form.typeActivite)}}
+      {{form_label(form.typeActivite)}}
+      </div>
+      </br>
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
