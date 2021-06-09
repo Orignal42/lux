@@ -15,6 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class JobOfferController extends AbstractController
 {
     /**
+    
      * @Route("/", name="job_offer_index", methods={"GET"})
      */
     public function index(): Response
@@ -29,6 +30,7 @@ class JobOfferController extends AbstractController
     }
 
     /**
+     * 
      * @Route("/new", name="job_offer_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
