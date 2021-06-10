@@ -26,7 +26,7 @@ class JobOfferType extends AbstractType
             ->add('location')
             ->add('closingDate')
             ->add('salary')
-            // ->add('dateDeCreation',DateType::class) transferer dans me controleur sous le if avec la bonne fonction
+             ->add('dateDeCreation',DateType::class)
             ->add('jobTypeId', EntityType::class,[
                 'class' => JobType::class,
                 'query_builder' => function (EntityRepository $er){

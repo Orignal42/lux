@@ -56,10 +56,10 @@
                             <ul class="portfolio-meta">
                                 <li><span> Pulished at </span>{{ job_offer.dateDeCreation ? job_offer.dateDeCreation|date('Y-m-d H:i:s') : '' }}</li>
                                 <li><span> Position </span>{{ job_offer.notes }}</li>
-                                <li><span> Contract Type </span>{{job_offer.jobCategoryId</li>
-                                <li><span> Salary </span>{{ job_offer.salary }} &euro;</li>
-                                <li><span> Location </span>{{ job_offer.location }}</li>
-                                <li><span> Starting date </span>{{ job_offer.dateDeCreation }}</li>
+                                <li><span> Contract Type </span>{{job_offer.jobCategoryId}}</li>
+                                {# <li><span> Salary </span>{{ job_offer.salary }} &euro;</li> #}
+                       
+                               
                             </ul>
                             <a class="btn btn-block gradient primary mt-30 waves-effect waves-light" href="#!">Apply for this job</a>
                             <div class="btn btn-block btn-success mt-30 waves-effect waves-light disabled">You have applied for this job</div>
