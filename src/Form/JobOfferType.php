@@ -19,13 +19,14 @@ class JobOfferType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('title')
             ->add('reference')
             ->add('active')
             ->add('notes')
             ->add('location')
             ->add('closingDate')
             ->add('salary')
-            ->add('dateDeCreation',DateType::class)
+            // ->add('dateDeCreation',DateType::class) transferer dans me controleur sous le if avec la bonne fonction
             ->add('jobTypeId', EntityType::class,[
                 'class' => JobType::class,
                 'query_builder' => function (EntityRepository $er){

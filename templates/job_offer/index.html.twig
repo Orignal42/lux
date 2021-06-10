@@ -39,7 +39,7 @@
 
                     <ul class="portfolio-filter brand-filter text-center">
                         <li class="active waves-effect waves-light" data-group="all">All</li>
-                        <li class=" waves-effect waves-light" data-group="commercial">Commercial</li>
+                        <li class=" waves-effect waves-light" data-group="Commercial">Commercial</li>
                         <li class=" waves-effect waves-light" data-group="Retail Sales">Retail sales</li>
                         <li class=" waves-effect waves-light" data-group="Creative">Creative</li>
                         <li class=" waves-effect waves-light" data-group="Technology">Technology</li>
@@ -52,6 +52,7 @@
                         <div class="portfolio-item" data-groups='["all", "{{ job_offer.jobCategoryId.jobCategory }}"]'>
                             <div class="portfolio-wrapper">
                                 <div class="card job-card">
+                                 <h1 class="ref grey-text no-margin">{{ job_offer.title }}</H1>
                                     <div class="card-content">
                                         {# <span class="title">{{ job_offer.title }} #}
                                             <span class="card-title"></span>

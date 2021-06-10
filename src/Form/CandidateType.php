@@ -30,7 +30,7 @@ class CandidateType extends AbstractType
         $builder
             ->add('gender', ChoiceType::class, [
                 'choices'  => [
-                    'Transgenre' => null,
+                    
                     'Homme' => true,
                     'Femme' => false,
                 ],

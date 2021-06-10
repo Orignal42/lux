@@ -8,6 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use DateTime;
+
 
 /**
  * @Route("/job/offer")
@@ -40,6 +43,7 @@ class JobOfferController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $jobOffer->setDateDeCreation(new DateTime());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($jobOffer);
             $entityManager->flush();

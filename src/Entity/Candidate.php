@@ -23,7 +23,7 @@ class Candidate
     private $id;
 
     /**
-     * @var bool
+     * @var string
      *
      * @ORM\Column(name="gender", type="boolean", nullable=true)
      */
