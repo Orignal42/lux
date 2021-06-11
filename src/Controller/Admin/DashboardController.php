@@ -62,7 +62,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoCrud('Client', 'fa fa-List', Client::class);
         yield MenuItem::linktoCrud('Candidature', 'fa fa-List', Candidature::class);
         yield MenuItem::linktoCrud('Candidate', 'fa fa-List', Candidate::class);
-        yield MenuItem::linktoCrud('User', 'fa fa-List', Candidate::class);
+        yield MenuItem::linktoCrud('User', 'fa fa-List', User::class);
         
     }
 
@@ -75,8 +75,8 @@ class DashboardController extends AbstractDashboardController
     // {
     //     return [
     //         IdField::new('id')->onlyOnIndex(),
-    //         TextField::new('society_name'),
-    //         TextEditorField::new('type_activite')->onlyOnForms(),
+    //         TextField::new('title'),
+    //         TextEditorField::new('salary')->onlyOnForms(),
     //     ];
     // }
 }

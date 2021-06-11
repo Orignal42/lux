@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Candidature;
+use App\Entity\JobOffer;
 use App\Form\CandidatureType;
+use App\Form\JobOfferType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,26 +30,30 @@ class CandidatureController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/new", name="candidature_new", methods={"GET","POST"})
+  /**
+     * @Route("/new/{id}", name="candidature_new", methods={"GET"})
      */
-    public function new(Request $request): Response
-    {
+    public function new(Request $request, JobOffer $jobOffer ): Response
+    {  
+    
         $candidature = new Candidature();
-        $form = $this->createForm(CandidatureType::class, $candidature);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
+       
+        $candidate = $this->getUser()->getCandidate();
+        $candidature->setIdOffer($jobOffer);
+        $candidature->setIdCandidat($candidate);
+      
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($candidature);
             $entityManager->flush();
 
-            return $this->redirectToRoute('candidature_index');
-        }
+            return $this->redirectToRoute('job_offer_show', [
+                'id'=> $jobOffer->getId(),
+            ]);
+    
 
         return $this->render('candidature/new.html.twig', [
             'candidature' => $candidature,
-            'form' => $form->createView(),
+          
         ]);
     }
 

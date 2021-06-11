@@ -4,7 +4,9 @@ namespace App\Controller\Admin;
 
 use App\Entity\InfoAdminClient;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-
+use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 class InfoAdminClientCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -12,14 +14,17 @@ class InfoAdminClientCrudController extends AbstractCrudController
         return InfoAdminClient::class;
     }
 
-    /*
+    
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            Field::new('name'),
+            Field::new('poste'),
+            Field::new('numero'),
+            Field::new('notes'),
+            Field::new('email'),
+            AssociationField::new('clientId'),
         ];
     }
-    */
+    
 }

@@ -6,31 +6,30 @@
 
 
     <div class="container">
-     <h2>Clients</h2>
-    <div class="card">
+    
       
         {% set count = 0 %}
-        {% set count = count + 1 %}
+     
             {% for client in clients %}
-            <p> {{count }} </p>
+              {% set count = count + 1 %}
             {% endfor %}
-      </div>
-              <h2>Job</h2>
+             <h2>Clients</h2>
+            <p> {{count }} </p>
+    
+           
          {% set count = 0 %}        
          {% for job_offer in job_offers %}
          {% set count = count + 1 %}
-         {% endfor %}
-         <div class="card">
+         {% endfor %}         
+            <h2>Job</h2>
          <p>{{ count }}</p>
-         </div>
               {% set count = 0 %}
               {% for candidate in candidates %}
               {% set count = count + 1 %}
               {% endfor %}
               <h2>Candidate</h2>
-          <div class="card">
-            <p>{{ count }}</p>
-          </div>
+              <p>{{ count }}</p>
+         
             
    
           
