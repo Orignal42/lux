@@ -53,11 +53,7 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-
-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
-
         yield MenuItem::linktoCrud('JobOffer', 'fa fa-List', JobOffer::class);
-
         yield MenuItem::linktoCrud('JobType', 'fa fa-List', JobType::class);
         yield MenuItem::linktoCrud('JobCategory', 'fa fa-List', JobCategory::class);
         yield MenuItem::linktoCrud('InfoAdminClient', 'fa fa-List', InfoAdminClient::class);
@@ -67,6 +63,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoCrud('Candidature', 'fa fa-List', Candidature::class);
         yield MenuItem::linktoCrud('Candidate', 'fa fa-List', Candidate::class);
         yield MenuItem::linktoCrud('User', 'fa fa-List', Candidate::class);
+        
     }
 
     public static function getEntityFqcn(): string
@@ -74,12 +71,12 @@ class DashboardController extends AbstractDashboardController
         return Client::class;
     }
 
-    public function configureFields(string $client): iterable
-    {
-        return [
-            IdField::new('id')->onlyOnIndex(),
-            TextField::new('society_name'),
-            TextEditorField::new('type_activite')->onlyOnForms(),
-        ];
-    }
+    // public function configureFields(string $client): iterable
+    // {
+    //     return [
+    //         IdField::new('id')->onlyOnIndex(),
+    //         TextField::new('society_name'),
+    //         TextEditorField::new('type_activite')->onlyOnForms(),
+    //     ];
+    // }
 }

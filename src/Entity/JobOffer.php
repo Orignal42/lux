@@ -73,7 +73,7 @@ class JobOffer
     /**
      * @var \JobType
      *
-     * @ORM\ManyToOne(targetEntity="JobType",cascade={"persist", "remove"}))
+     * @ORM\ManyToOne(targetEntity="JobType")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="job_type_id_id", referencedColumnName="id")
      * })
@@ -83,7 +83,7 @@ class JobOffer
     /**
      * @var \JobCategory
      *
-     * @ORM\ManyToOne(targetEntity="JobCategory",cascade={"persist", "remove"}))
+     * @ORM\ManyToOne(targetEntity="JobCategory")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="job_category_id_id", referencedColumnName="id")
      * })
@@ -95,7 +95,7 @@ class JobOffer
      *
      * @ORM\ManyToOne(targetEntity="Client",cascade={"persist", "remove"}))
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="client_id_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="client_id_id", referencedColumnName="id", onDelete="CASCADE")
      * })
      */
     private $clientId;
@@ -241,6 +241,8 @@ class JobOffer
 
         return $this;
     }
+
+  
 
 
 }
