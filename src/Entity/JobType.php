@@ -45,7 +45,8 @@ class JobType
         return $this;
     }
     public function __toString(): string
-    {
+     {  
+        //   PERMET DE RECUPERER LA PARTIE DE L OBJET QUI NOUS INTERESSE
         return $this->getJobType();
     }
 

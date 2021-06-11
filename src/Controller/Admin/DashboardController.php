@@ -21,7 +21,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -70,6 +70,8 @@ class DashboardController extends AbstractDashboardController
     {
         return Client::class;
     }
+
+
 
     // public function configureFields(string $client): iterable
     // {

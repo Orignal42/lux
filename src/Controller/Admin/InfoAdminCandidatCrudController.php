@@ -3,7 +3,13 @@
 namespace App\Controller\Admin;
 
 use App\Entity\InfoAdminCandidat;
+use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+
+
+
 
 class InfoAdminCandidatCrudController extends AbstractCrudController
 {
@@ -12,14 +18,16 @@ class InfoAdminCandidatCrudController extends AbstractCrudController
         return InfoAdminCandidat::class;
     }
 
-    /*
+    
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            Field::new('notes'),
+            DateTimeField::new('date_created'),
+            Field::new('date_deleted'),
+         
+
         ];
     }
-    */
+    
 }

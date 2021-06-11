@@ -30,6 +30,7 @@ class CandidateCrudController extends AbstractCrudController
             Field::new('Place_of_Birth'),
             Field::new('Description'),
              AssociationField::new('experienceId'),
+          
              AssociationField::new('jobCategoryId'),
              AssociationField::new('user'),
         ];

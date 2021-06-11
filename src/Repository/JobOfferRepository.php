@@ -48,31 +48,5 @@ class JobOfferRepository extends ServiceEntityRepository
     }
     */
 
-    // public function getPreviousJob($job){
-    //     $entityManager = $this->getEntityManager();
-    //     $query = $entityManager->createQuery(
-    //         'SELECT  
-    //             jobOffer
-    //          FROM App\Entity\JobOffer jobOffer
-    //          WHERE jobOffer.date_de_creation < :date 
-    //          ORDER BY jobOffer.id DESC
-    //         '
-    //         )->setParameter('date', $job->getDateDeCreation())->setMaxResults(1);
-    //     return $query->getResult();
-
-    // }
-    
-    // public function getNextJob($job){
-    //     $entityManager = $this->getEntityManager();
-    //     $query = $entityManager->createQuery(
-    //         'SELECT  
-    //             jobOffer
-    //          FROM App\Entity\JobOffer jobOffer
-    //          WHERE jobOffer.date_de_creation > :date 
-    //          ORDER BY jobOffer.id ASC
-    //         '
-    //         )->setParameter('date', $job->getDateDeCreation())->setMaxResults(1);
-    //     return $query->getResult();
-
-    // }
+ 
 }

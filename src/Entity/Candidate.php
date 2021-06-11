@@ -382,7 +382,10 @@ class Candidate
             
             ];
     }
-
+    public function __toString(): string
+    {
+        return $this->getLastName();
+    }
 
 
 }

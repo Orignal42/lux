@@ -26,7 +26,7 @@ class Candidature
      *
      * @ORM\ManyToOne(targetEntity="Candidate")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_candidat_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="id_candidat_id", referencedColumnName="id", onDelete="SET NULL")
      * })
      */
     private $idCandidat;
@@ -36,7 +36,7 @@ class Candidature
      *
      * @ORM\ManyToOne(targetEntity="JobOffer")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_offer_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="id_offer_id", referencedColumnName="id", onDelete="SET NULL")
      * })
      */
     private $idOffer;

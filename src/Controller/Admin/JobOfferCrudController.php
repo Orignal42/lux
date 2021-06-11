@@ -23,10 +23,12 @@ class JobOfferCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+            
             Field::new('title'),
             Field::new('active'),
             Field::new('reference'),
             Field::new('notes'),
+            Field::new('salary'),
             Field::new('location'),
             AssociationField::new('clientId'),
             AssociationField::new('jobTypeId'),

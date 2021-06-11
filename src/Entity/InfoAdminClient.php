@@ -61,7 +61,7 @@ class InfoAdminClient
      *
      * @ORM\ManyToOne(targetEntity="Client",cascade={"persist", "remove"})
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="client_id_id", referencedColumnName="id", onDelete="CASCADE")
+     *   @ORM\JoinColumn(name="client_id_id", referencedColumnName="id",  onDelete="SET NULL")
      * })
      */
     private $clientId;
@@ -143,5 +143,5 @@ class InfoAdminClient
         return $this;
     }
 
-
+ 
 }
