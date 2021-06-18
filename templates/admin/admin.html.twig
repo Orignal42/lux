@@ -7,26 +7,31 @@
 
 <div class="container">
     
-    <div class="card-body column align-items-center d-flex justify-content-center">
-        {% set count = 0 %}     
-            {% for client in clients %}
+    <div class="card-body align-items-center d-flex justify-content-center">
+            {% set count = 0 %}     
+                {% for client in clients %}
+                  {% set count = count + 1 %}
+                {% endfor %}
+                <br>  <h1>Clients  {{count }} </h1>    <br> 
+
+          </div> 
+          <div class="card-body align-items-center d-flex justify-content-center">  
+              {% set count = 0 %}        
+              {% for job_offer in job_offers %}
               {% set count = count + 1 %}
-            {% endfor %}
-            <br>  <h1>Clients  {{count }} </h1>    <br> 
-        
-         {% set count = 0 %}        
-         {% for job_offer in job_offers %}
-         {% set count = count + 1 %}
-         {% endfor %}      
+              {% endfor %}  
+              <br><h1>Job {{ count }}</h1>    <br>  
+         </div> 
+
+              <div class="card-body align-items-center d-flex justify-content-center">  
+          
+                  {% set count = 0 %}
+                  {% for candidate in candidates %}
+                  {% set count = count + 1 %}
+                  {% endfor %}          
+                <h1>Candidate {{ count }}</h1>
          
-            <br><h1>Job {{ count }}</h1>
-              {% set count = 0 %}
-              {% for candidate in candidates %}
-              {% set count = count + 1 %}
-              {% endfor %}          
-             <h1>Candidate {{ count }}</h1>
-         
-            
+              </div> 
    
           
        
