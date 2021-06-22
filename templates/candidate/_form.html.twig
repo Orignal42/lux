@@ -51,78 +51,111 @@
          {{ form_label(form.nationality, 'votre nationalité', {
             'label_attr': {'class': 'nationality'}
         }) }}</div></div>
-                                       
-                                <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="input-field">
-         {{ form_widget(form.passport)}}
-         {{ form_label(form.passport, 'un scan de votre passeport', {
-            'label_attr': {'class': 'passport'}
-        }) }}
-         <a href="{{asset ('uploads/passport/'~ candidate.passport )}}">View passport</a>
-        </div></div>
                                   
-                                <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="input-field">
-         {{ form_widget(form.cv)}}
-         {{ form_label(form.cv, 'Cv', {
-            'label_attr': {'class': 'cv'}
-        }) }}
-        <a href="{{asset ('uploads/cv/' ~ candidate.cv)}}">View cv</a></div></div>
+   
         
                                                
                                 <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="input-field">
-         {{ form_widget(form.profil_picture)}}
-         {{ form_label(form.profil_picture, 'Une photo', {
-            'label_attr': {'class': 'profilPicture'}
-        }) }}
-        <a href="{{asset ('uploads/profil/' ~ candidate.profilPicture )}}">View profilpicture</a>
-        </div></div>
+                            <div class="file-field input-field"
+                                 style="margin-top: 32px;">
+                                <div class="btn btn-lg primary waves-effect waves-light">
+                                        {{ form_widget(form.profil_picture)}}
+                                        {{ form_label(form.profil_picture, 'Une photo', {
+                                            'label_attr': {'class': 'profilPicture'}
+                                        }) }} </div>
+                                        <a href="{{asset ('uploads/profil/' ~ candidate.profilPicture )}}">
+                                    
+                                        View profilpicture</a>
+                                        </div>
+                                        </div>
     
                                 <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="input-field">
-            {{ form_widget(form.currentLocation)}}
-         {{ form_label(form.currentLocation, 'le secteur de votre recherche', {
-            'label_attr': {'class': 'currentLocation'}
-        }) }}</div></div>
+                                    <div class="input-field">
+                                        {{ form_widget(form.currentLocation)}}
+                                    {{ form_label(form.currentLocation, 'le secteur de votre recherche', {
+                                        'label_attr': {'class': 'currentLocation'}
+                                    }) }}
+                                    </div>
+                                </div>
 
                              
                                 <div class="col-xs-12 col-sm-6 col-md-4">
                             <div class="input-field">
-         {{ form_widget(form.dateOfBirth)}}
-         {{ form_label(form.dateOfBirth, 'votre date de naissance', {
-            'label_attr': {'class': 'dateOfBirth'}
-        }) }}</div></div>
+                                {{ form_widget(form.dateOfBirth)}}
+                                {{ form_label(form.dateOfBirth, 'votre date de naissance', {
+                                    'label_attr': {'class': 'dateOfBirth'}
+                                }) }}
+                                </div>
+                                </div>
                                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="input-field">
-         {{ form_widget(form.placeOfBirth)}}
-         {{ form_label(form.placeOfBirth, 'votre lieu de naissance', {
-            'label_attr': {'class': 'placeOfBirth'}
-        }) }}</div></div>
+                                        <div class="input-field">
+                                            {{ form_widget(form.placeOfBirth)}}
+                                            {{ form_label(form.placeOfBirth, 'votre lieu de naissance', {
+                                                'label_attr': {'class': 'placeOfBirth'}
+                                            }) }}
+                                            </div>
+                                            </div>
                                  <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="input-field">
-         {{ form_widget(form.description)}}
-         {{ form_label(form.description, 'un résumé rapide de votre vie', {
-            'label_attr': {'class': 'description'}
-        }) }}</div></div>
+                                    <div class="input-field">
+                                    {{ form_widget(form.description)}}
+                                    {{ form_label(form.description, 'un résumé rapide de votre vie', {
+                                        'label_attr': {'class': 'description'}
+                                    }) }}
+                                    </div>
+                                 </div>
+                                  <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div class="input-field">
+                                    {{ form_widget(form.experienceId)}}
+                                    {{ form_label(form.experienceId, 'un résumé rapide de votre vie', {
+                                        'label_attr': {'class': 'experienceId'}
+                                    }) }}
+                                    </div>
+                             
+                                    <div class="input-field">
+                                    {{ form_widget(form.job_category_id)}}
+                                    {{ form_label(form.job_category_id, 'un résumé rapide de votre vie', {
+                                        'label_attr': {'class': 'job_category_id'}
+                                    }) }}
+                                    </div>
+                                 </div>
 
-                     
+
+                                                      <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="file-field input-field"
+                                 style="margin-top: 32px;">
+                                <div class="btn btn-lg primary waves-effect waves-light">
+                                    {{ form_widget(form.passport)}}
+                                    {{ form_label(form.passport, 'un scan de votre passeport', {
+                                        'label_attr': {'class': 'passport'}
+                                    }) }}                   </div>
+                                    <a href="{{asset ('uploads/passport/'~ candidate.passport )}}">View passport</a>
+                                </div>
+                        
+                                  
+                      
+                                  <div class="file-field input-field"
+                                 style="margin-top: 32px;">
+                                      <div class="btn btn-lg primary waves-effect waves-light">
+                                            {{ form_widget(form.cv)}}
+                                            {{ form_label(form.cv, 'Cv', {
+                                                'label_attr': {'class': 'cv'}
+                                            }) }}                     
+                                            </div>
+                                    <a href="{{asset ('uploads/cv/' ~ candidate.cv)}}">
+                                    
+                                    View cv</a>
+                                 </div>
+                                  
+                              </div>
                     </div>
 
                 </div>
             </div>
         </section>
 
-    </div>
 
-</div>
 
  
-               </div>
-            </section>
-  
-
-    </div>
-   
+     
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

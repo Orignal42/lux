@@ -13,8 +13,27 @@
         {% set pourcentageCompleted = fieldCount * 100 / dataLength %}
 
 
-    <h1>Edit Candidate</h1>
-       <section class="gray-bg">
+    <h1></h1>
+          <section class="page-title page-title-bg fixed-bg overlay dark-5 padding-top-160 padding-bottom-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="white-text">Your profile</h2>
+                        <span class="white-text">Personnal & Professionnal informations</span>
+                        <ol class="breadcrumb">
+                            <li><a href="#!">Home</a></li>
+                            <li class="active">Profile</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gray-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="score-container">
+
+       
                     {% if pourcentageCompleted|round == 100 %}
 
                     <h4>
@@ -40,8 +59,11 @@
                             <div class="bar"></div>
                             <div class="fill"></div>
                         </div>
+                              <div class="clearfix"></div>
                     </div>
-
+     </div>    
+      </div>
+           </div>
                 {% endif %}
 
        
