@@ -3,11 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Candidate;
-use App\Entity\InfoAdminCandidat;
-use App\Form\CandidateType;
+use App\Entity\User;
 
-// use App\Entity\Experience;
-// use App\Entity\User;
+use App\Form\CandidateType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,9 +13,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\String\Slugger\SluggerInterface;
-
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
-
+use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @Route("/candidate")
  */
@@ -73,7 +71,7 @@ class CandidateController extends AbstractController
     /**
      * @Route("/{id}/edit", name="candidate_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Candidate $candidate, SluggerInterface $slugger): Response
+    public function edit(Request $request, Candidate $candidate,  UserPasswordEncoderInterface $passwordEncoder, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(CandidateType::class, $candidate);
         $form->handleRequest($request);
@@ -95,6 +93,14 @@ class CandidateController extends AbstractController
             if($passport){
                 $candidate->setPassport($this->uploadFile($passport, $slugger, 'passport_directory'));
             }
+            // $user->setPassword(
+            //     $passwordEncoder->encodePassword(
+            //         $user,
+            //         $form->get('password')->getData()
+            //     )
+            // );
+
+       
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('candidate_edit',[

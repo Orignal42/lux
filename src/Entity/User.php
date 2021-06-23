@@ -136,9 +136,9 @@ class User implements UserInterface
         return $this;
     }
 
-    // public function __toString() : string
-    // {
-    //     return $this->getCandidate();
-    // }
+    public function __toString() : string
+    {
+        return $this->getEmail();
+    }
     
 }

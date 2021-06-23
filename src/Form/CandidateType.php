@@ -7,6 +7,7 @@ use App\Entity\JobCategory;
 use App\Entity\Experience;
 use App\Entity\InfoAdminCandidat;
 use App\Entity\User;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,11 +18,14 @@ use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+
+use Symfony\Component\Validator\Constraints\IsTrue;
 
 
-          
 
-
+use App\Form\RegistrationFormType;
+use App\Repository\UserRepository;
 
 class CandidateType extends AbstractType
 {
@@ -29,8 +33,7 @@ class CandidateType extends AbstractType
     {
         $builder
             ->add('gender', ChoiceType::class, [
-                'choices'  => [
-                    
+                'choices'  => [                    
                     'Homme' => true,
                     'Femme' => false,
                 ],
@@ -103,7 +106,7 @@ class CandidateType extends AbstractType
             },
             'choice_label' => 'experience'
         ])
-            // ->add('infoAdminCandidatId')
+           
             ->add('job_category_id', EntityType::class,[
                 'class' => JobCategory::class,
                 'query_builder' => function (EntityRepository $er){
@@ -112,8 +115,15 @@ class CandidateType extends AbstractType
                 },
                 'choice_label' => 'job_category'
             ])
-            // ->add('userId',RegistrationFormType::class)
+            ->add('user',UserType::class,[
+          
+            ])
+         
+           
         ;
+             
+        
+
     }
 
     public function configureOptions(OptionsResolver $resolver)
